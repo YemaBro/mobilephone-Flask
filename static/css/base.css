@@ -1,0 +1,21 @@
+.navbar-brand {
+    font-size: 24px;
+}
+
+
+.page-top{
+    padding: 20px 40px;
+    font-size: 18px;
+
+}
+
+.navbar {
+    border: none;
+    margin-bottom: 0px;
+}
+
+.container-fluid {
+    background-color: #ffffff;
+    /*border: none;*/
+}
+

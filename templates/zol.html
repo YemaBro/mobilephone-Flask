@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/other.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/paginate.css') }}">
+{% endblock %}
+
+{% block news %}
+<div class="news-box">
+    <ul class="news-u">
+        {% for news in zolnews %}
+            <div class="news-list">
+                <li class="list-group-item" >
+                    <a href="{{ news.url }}" class="title" target="_blank">{{ news.title }}</a>
+                    <span class="detail">{{ news.author }}&nbsp;&nbsp;{{ news.date }}</span>
+                    <div class="tags">
+                    <ol class="breadcrumb">
+                        {% for tag in news.tags %}
+                        <li>{{ tag }}</li>
+                        {% endfor %}
+                    </ol>
+                    </div>
+                </li>
+            </div>
+        {% endfor %}
+    </ul>
+    <div class="pagination-box">
+        {{ pagination.links }}
+    </div>
+</div>
+{% endblock %}
